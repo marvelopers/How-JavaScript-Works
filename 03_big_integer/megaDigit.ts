@@ -92,4 +92,39 @@ const megaDigit = () => {
   const ge = (a, b) => !lessThan(a, b);
   const gt = (a, b) => lessThan(b, a);
   const le = (a, b) => !lessThan(b, a);
+
+  //비트 연산 함수
+
+  const and = (a, b) => {
+    if (a.length > b.length) {
+      [a, b] = [b, a];
+    }
+    return mint(
+      a.map((element, element_nr) =>
+        element_nr === SIGN ? PLUS : element && b[element_nr]
+      )
+    );
+  };
+
+  const or = (a, b) => {
+    if (a.length < b.length) {
+      [a, b] = [b, a];
+    }
+    return mint(
+      a.map((element, element_nr) =>
+        element_nr === SIGN ? PLUS : element | (b[element_nr] || 0)
+      )
+    );
+  };
+
+  const xor = (a, b) => {
+    if (a.length < b.length) {
+      [a, b] = [b, a];
+    }
+    return mint(
+      a.map((element, element_nr) =>
+        element_nr === SIGN ? PLUS : element ^ (b[element_nr] || 0)
+      )
+    );
+  };
 };
