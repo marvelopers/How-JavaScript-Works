@@ -67,4 +67,29 @@ const megaDigit = () => {
       comparahend.every(
         (element, elementNr) => element === comparator[elementNr]
       ));
+
+  // 큰 정수의 절대값이 다른 큰 정수의 절대값보다 작은지 판별
+  const abs_lt = (comparahend, comparator) =>
+    comparahend.length === comparator.length
+      ? comparahend.reduce((reduction, element, element_nr) => {
+          if (element_nr !== SIGN) {
+            const other = comparator[element_nr];
+            if (element !== other) {
+              return element < other;
+            }
+          }
+          return reduction;
+        }, false)
+      : comparahend.length < comparator.length;
+
+  const lessThan = (comparahend, comparator) => {
+    if (comparahend[SIGN] !== comparator[SIGN]) return isNegative(comparahend);
+    return isNegative(comparahend)
+      ? abs_lt(comparator, comparahend)
+      : abs_lt(comparahend, comparator);
+  };
+
+  const ge = (a, b) => !lessThan(a, b);
+  const gt = (a, b) => lessThan(b, a);
+  const le = (a, b) => !lessThan(b, a);
 };
