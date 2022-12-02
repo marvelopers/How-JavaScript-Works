@@ -1,8 +1,10 @@
-const makeBinaryOp = (func) => {
-  return (myLittleArray: []) => {
+type FuncType = (zeroth: number, wunth: number)=> number
+
+const makeBinaryOp = (func:FuncType) => {
+  return (myLittleArray: number[]) => {
     let wunth = myLittleArray.pop();
-    let zeroth = myLittleArray.pop();
-    myLittleArray.push(func(zeroth, wunth));
+    let zeroth= myLittleArray.pop();
+    myLittleArray.push(func(zeroth as number, wunth as number));
     return myLittleArray;
   };
 };
