@@ -51,6 +51,32 @@
 - 유리수 : 두개의 정수 비율로 나타낼 수 있는 수
 - 값 = 분자/분모
 
-## 
+## 6장 boolean 
+- ture, false 
+- falsy한 값 사용하지 않는 것을 권장
+
+## 7장 배열
+- 자바스트립트의 배열은 객체
+- array.prototype 상속
+- 스택과 큐 배열로 구현 
+- 배열의 내장함수 
+   - 검색 : indexOf, include
+   - 축약 : reduce
+   - 반복 : every, some, find,findIndex, filter, map
+   - 정렬 : sort
+
+## 8장 객체
+- null과 undefined를 제외한 모든 것을 객체로 취급
+- 속성: key와 value
+- 객체 복사 : objectassign
+- 객체 불변성: Object.freeze => 최상위 객체만 동결
+- weekmap
+
+## 9장 문자열
+- 유니코드 : 코드유닛(16비트 문자 중 하나), 코드 포인트(문자에 해당하는 숫자 표시)
+- 템플릿 리터럴 : dump
+- 정규 표현식
+   - string, match, replace, search, split 함수는 인자로 정규표현식 객체를 받음
+   - 정규표현식 객체로는 JSON 텍스트를 분석할 수 없음
 
 
